@@ -1,0 +1,3 @@
+*.pyc
+venv
+MNIST_data
