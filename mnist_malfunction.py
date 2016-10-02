@@ -135,6 +135,17 @@ def get_batch(full_batch, train, active_splits=None):
 
   return batch_splits, batch[1], active_splits
 
+def update_trainable_variables(active_splits, net_index, model):
+  variables_to_train = tf.get_collection_ref(tf.GraphKeys.TRAINABLE_VARIABLES)
+  if active_splits[net_index]:
+    for _, trainable_var in model['trainable_vars'][net_index].items():
+      if trainable_var not in variables_to_train:
+        variables_to_train.append(trainable_var)
+  else:
+    for _, trainable_var in model['trainable_vars'][net_index].items():
+      if trainable_var in variables_to_train:
+        variables_to_train.remove(trainable_var)
+
 DROPOUT_PROB = 0.5
 def run_training(session, model, num_steps, full_depth):
   for step in range(num_steps):
@@ -142,17 +153,7 @@ def run_training(session, model, num_steps, full_depth):
     feed_dict={}
     for idx, input_x in enumerate(model['inputs']):
       feed_dict[input_x] = splits[idx]
-
-      # remove weights of non-active networks from trainable variables
-      variables_to_train = tf.trainable_variables()
-      if active_splits[idx]:
-        for trainable_var in model['trainable_vars']:
-          if trainable_var not in variables_to_train:
-            variables_to_train.append(trainable_var)
-      else:
-        for trainable_var in model['trainable_vars']:
-          if trainable_var in variables_to_train:
-            variables_to_train.remove(trainable_var)
+      update_trainable_variables(active_splits, idx, model)
 
     feed_dict[model['targets']] = labels
     feed_dict[model['keep_prob']] = DROPOUT_PROB
