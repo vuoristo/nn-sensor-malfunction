@@ -38,38 +38,39 @@ In the following the results of running the experiment with default parameters i
 In the `fixed_model` the softmax layer weights are copied from the initial model and then made untrainable.
 
 ```
+
 Testing full_model after 20000 steps
-Test accuracy: 0.314, active_splits: [True, False, False, False]
-Test accuracy: 0.247, active_splits: [False, True, False, False]
-Test accuracy: 0.233, active_splits: [False, False, True, False]
-Test accuracy: 0.133, active_splits: [False, False, False, True]
-Test accuracy: 0.435, active_splits: [False, False, True, True]
-Test accuracy: 0.910, active_splits: [True, True, False, False]
-Test accuracy: 0.841, active_splits: [False, True, True, False]
-Test accuracy: 0.971, active_splits: [True, True, True, False]
-Test accuracy: 0.996, active_splits: [True, True, True, True]
+Test accuracy: 0.263, active_splits: [True, False, False, False]
+Test accuracy: 0.256, active_splits: [False, True, False, False]
+Test accuracy: 0.282, active_splits: [False, False, True, False]
+Test accuracy: 0.202, active_splits: [False, False, False, True]
+Test accuracy: 0.504, active_splits: [False, False, True, True]
+Test accuracy: 0.907, active_splits: [True, True, False, False]
+Test accuracy: 0.796, active_splits: [False, True, True, False]
+Test accuracy: 0.982, active_splits: [True, True, True, False]
+Test accuracy: 0.995, active_splits: [True, True, True, True]
 
 Testing full_model trained with partial training data after 20000 steps
-Test accuracy: 0.730, active_splits: [True, False, False, False]
-Test accuracy: 0.791, active_splits: [False, True, False, False]
-Test accuracy: 0.829, active_splits: [False, False, True, False]
-Test accuracy: 0.735, active_splits: [False, False, False, True]
-Test accuracy: 0.921, active_splits: [False, False, True, True]
-Test accuracy: 0.953, active_splits: [True, True, False, False]
-Test accuracy: 0.967, active_splits: [False, True, True, False]
-Test accuracy: 0.980, active_splits: [True, True, True, False]
-Test accuracy: 0.981, active_splits: [True, True, True, True]
+Test accuracy: 0.731, active_splits: [True, False, False, False]
+Test accuracy: 0.792, active_splits: [False, True, False, False]
+Test accuracy: 0.846, active_splits: [False, False, True, False]
+Test accuracy: 0.737, active_splits: [False, False, False, True]
+Test accuracy: 0.912, active_splits: [False, False, True, True]
+Test accuracy: 0.957, active_splits: [True, True, False, False]
+Test accuracy: 0.952, active_splits: [False, True, True, False]
+Test accuracy: 0.976, active_splits: [True, True, True, False]
+Test accuracy: 0.977, active_splits: [True, True, True, True]
 
 Testing fixed_model trained with partial training data after 20000 steps
 Test accuracy: 0.734, active_splits: [True, False, False, False]
-Test accuracy: 0.768, active_splits: [False, True, False, False]
-Test accuracy: 0.814, active_splits: [False, False, True, False]
-Test accuracy: 0.698, active_splits: [False, False, False, True]
-Test accuracy: 0.901, active_splits: [False, False, True, True]
-Test accuracy: 0.922, active_splits: [True, True, False, False]
-Test accuracy: 0.939, active_splits: [False, True, True, False]
-Test accuracy: 0.964, active_splits: [True, True, True, False]
-Test accuracy: 0.976, active_splits: [True, True, True, True]
+Test accuracy: 0.782, active_splits: [False, True, False, False]
+Test accuracy: 0.828, active_splits: [False, False, True, False]
+Test accuracy: 0.689, active_splits: [False, False, False, True]
+Test accuracy: 0.908, active_splits: [False, False, True, True]
+Test accuracy: 0.936, active_splits: [True, True, False, False]
+Test accuracy: 0.947, active_splits: [False, True, True, False]
+Test accuracy: 0.971, active_splits: [True, True, True, False]
+Test accuracy: 0.981, active_splits: [True, True, True, True]
 ```
 
 Conclusion
